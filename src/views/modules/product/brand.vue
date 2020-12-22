@@ -169,7 +169,7 @@ export default {
       dataListLoading: false,
       dataListSelections: [],
       addOrUpdateVisible: false,
-      fit: 'fill',
+      // fit: "fill",
     };
   },
   components: {
@@ -184,14 +184,18 @@ export default {
       console.log("获取的值：", data);
       let { brandId, showStatus } = data;
       this.$http({
-        url: this.$http.adornUrl("/product/brand/update"),
+        url: this.$http.adornUrl("/product/brand/update/status"),
         method: "post",
         data: this.$http.adornData({ brandId, showStatus }, false),
       }).then(({ data }) => {
-        this.$message({
-          message: "状态更新成功!",
-          type: "success",
-        });
+        if (data && data.code === 0) {
+          this.$message({
+            message: "操作成功",
+            type: "success",
+          });
+        } else {
+          this.$message.error(data.msg);
+        }
       });
     },
 

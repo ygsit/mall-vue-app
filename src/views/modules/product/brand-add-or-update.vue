@@ -82,7 +82,8 @@
           sort: [
             { validator: (rule, value, callback) => {
               console.log("排序字段：",value)
-              if (value == "") {
+              //  0=="" true    0===""  false
+              if (value === "") {
                 callback(new Error("排序字段不能为空"));
               } else if (!Number.isInteger(value) || value<0) {
                 callback(new Error("排序必须是一个大于等于0的整数"));
