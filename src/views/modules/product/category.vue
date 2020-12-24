@@ -1,5 +1,5 @@
 <template>
-  <div class="catagory">
+  <div class="category">
     <el-row>
       <el-button type="primary" v-on:click="addLevel1Catagory"
         >添加一级分类</el-button
@@ -369,24 +369,24 @@ export default {
 <style lang="scss" scoped>
 //有scoped表示样式只在当前组件生效，引用的别人的组件都修改不了，必须使用  /deep/ 才能修改
 
-// /deep/ .catagory .el-form-item.el-form-item--medium .el-form-item__label {
+// /deep/ .category .el-form-item.el-form-item--medium .el-form-item__label {
 //   text-align: left;
 //   float: none;
 // }
 
-// /deep/ .catagory .el-form-item.el-form-item--medium .el-select.el-select--medium {
+// /deep/ .category .el-form-item.el-form-item--medium .el-select.el-select--medium {
 //   display: block;
 // }
 </style>
 
 <style>
 /* 不加scope 代表样式全局生效  所有组件生效 */
-.catagory .el-form-item.el-form-item--medium .el-form-item__label {
+.category .el-form-item.el-form-item--medium .el-form-item__label {
   text-align: left;
   float: none;
 }
 
-.catagory .el-form-item.el-form-item--medium .el-select.el-select--medium {
+.category .el-form-item.el-form-item--medium .el-select.el-select--medium {
   display: block;
 }
 </style>
